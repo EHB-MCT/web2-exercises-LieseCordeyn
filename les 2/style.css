@@ -27,6 +27,7 @@ div h2 {
     font-size: 10pt;
     padding: 3px 15px;
     border-radius: 5px;
+    color: white;
 }
 
 div h2:first-child {
@@ -39,6 +40,7 @@ header h1 {
 
 main {
     margin: 100px;
+    margin-top: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -58,25 +60,77 @@ button {
     display: flex;
 }
 
+/* types */
+
 #grass {
-    background-color: #9bcc4f;
+    background-color: #27cb50;
 }
 
 #poison {
-    background-color: #b97fc9;
-    color: white;
+    background-color: #9b69da;
+
 }
 
 #fire {
-    background-color: #fd7d24;
-    color: white;
+    background-color: #fd4d5a;
 }
 
 #flying {
-    background-color: #3dc7ee;
+    background-color: #93b1c5;
 }
 
 #water {
-    background-color: #4593c4;
-    color: white;
+    background-color: #85a8fc;
+}
+
+#bug {
+    background-color: #3b9753;
+}
+
+#dark {
+    background-color: #5a5879;
+}
+
+#dragon {
+    background-color: #63cad9;
+}
+
+#electric {
+    background-color: #fafb72;
+}
+
+#fairy {
+    background-color: #ea1369;
+}
+
+#fighting {
+    background-color: #ef6139;
+}
+
+#ghost {
+    background-color: #906791;
+}
+
+#ground {
+    background-color: #674826;
+}
+
+#ice {
+    background-color: #d8eef6;
+}
+
+#normal {
+    background-color: #cb98a7;
+}
+
+#psychic {
+    background-color: #f61d91;
+}
+
+#rock {
+    background-color: #883d20;
+}
+
+#steel {
+    background-color: #43be92;
 }
