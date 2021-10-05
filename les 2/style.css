@@ -38,6 +38,10 @@ header h1 {
     text-align: center;
 }
 
+header p {
+    text-align: center;
+}
+
 main {
     margin: 100px;
     margin-top: 25px;

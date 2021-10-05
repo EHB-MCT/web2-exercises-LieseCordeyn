@@ -1,5 +1,7 @@
 "use strict"
 
+import Team from './Team.js';
+
 let list = [];
 let pokemons = [];
 
@@ -26,7 +28,9 @@ const pokemon = {
     buildList() {
         let main = document.getElementById("pokemons");
         let htmlString = ""
-        console.log(pokemons)
+        pokemons.sort(function (a, b) {
+            return a.id - b.id;
+        })
         pokemons.forEach((poke => {
             htmlString += `        <div class="pokemon">
             <img src="${poke.sprites.front_default}" alt="pokemon"
@@ -49,7 +53,12 @@ const pokemon = {
         }))
 
         main.innerHTML = htmlString;
+        let myPoke = [pokemons[1].name, pokemons[132].name]
+        let team = new Team("Pokemooon", "Liese Cordeyn", myPoke)
+        team.describe();
     }
+
+
 };
 
 pokemon.initfield();
