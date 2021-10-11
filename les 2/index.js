@@ -4,6 +4,7 @@ import Team from './Team.js';
 
 let list = [];
 let pokemons = [];
+let team1 = [];
 
 const pokemon = {
     initfield() {
@@ -47,15 +48,34 @@ const pokemon = {
 
             htmlString += `
             </div>
-            <button>add to team</button>
+            <button class="button" id="${poke.name}">add to team</button>
         </div>`
 
         }))
 
         main.innerHTML = htmlString;
-        let myPoke = [pokemons[1].name, pokemons[132].name]
-        let team = new Team("Pokemooon", "Liese Cordeyn", myPoke)
-        team.describe();
+
+        let buttons = document.getElementsByClassName("button");
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function (e) {
+                e.preventDefault;
+                if (team1.length == 6) {
+                    document.getElementById('info').innerHTML = "The roster is full!";
+                } else if (team1.includes(buttons[i].id)) {
+                    document.getElementById('info').innerHTML = `${buttons[i].id} is already part of your roster`;
+                } else {
+                    team1.push(buttons[i].id);
+                    document.getElementById('info').innerHTML = `The pokemon ${buttons[i].id} has been succesfully added to the team!`;
+                    let team = new Team("Pokemooon", "Liese Cordeyn", team1)
+                    team.describe();
+                }
+
+
+            })
+        }
+
+
     }
 
 
