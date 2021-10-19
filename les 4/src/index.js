@@ -1,12 +1,45 @@
-import _ from 'lodash';
+import Cleave from 'cleave.js';
+require('cleave.js/dist/addons/cleave-phone.be')
 
-function component() {
-    const element = document.createElement('div');
+new Cleave('.my-name', {
+    prefix: 'Student-',
+});
 
-    // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+new Cleave('.my-date', {
+    date: true,
+    datePattern: ['d', 'm', 'Y']
+});
 
-    return element;
-}
+new Cleave('.my-RRN', {
+    blocks: [2, 2, 2, 3, 2],
+    delimiters: ['.', '.', '-', '.']
+});
 
-document.body.appendChild(component());
+new Cleave('.my-age', {
+    numeral: true,
+    numeralPositiveOnly: true
+});
+
+new Cleave('.my-phone', {
+    phone: true,
+    phoneRegionCode: 'Be'
+});
+
+document.getElementById('form').addEventListener('submit', e => {
+    e.preventDefault()
+    let name = document.getElementsByClassName("my-name")[0].value;
+    let date = document.getElementsByClassName("my-date")[0].value;
+    let RRN = document.getElementsByClassName("my-RRN")[0].value;
+    let age = document.getElementsByClassName("my-age")[0].value;
+    let phone = document.getElementsByClassName("my-phone")[0].value;
+
+    let htmlString = `
+    <h3>${name} was born on ${date} and is ${age}.
+    <br>
+    The government knows them as ${RRN}.
+    <br>
+    You can contact them at ${phone}`
+
+    document.getElementById("content").innerHTML = htmlString
+
+})

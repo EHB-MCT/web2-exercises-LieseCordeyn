@@ -3,7 +3,7 @@
 let htmlString = ""
 
 window.onload = function () {
-    let genre = "romance";
+    let genre = "horror";
 
     fetch(`https://openlibrary.org/subjects/${genre}.json`)
         .then(resp => resp.json())
